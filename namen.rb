@@ -2,7 +2,7 @@ french = ["pierre", "paul", "jean"]
 english = ["john", "paul", "peter"]
 dutch = ["peter",  "jan", "paul"]
 
-@candidate =[]
+@candidates =[]
 
 # def compare(array1)
 #   array1.each {|item_from_array1|
@@ -16,8 +16,8 @@ dutch = ["peter",  "jan", "paul"]
 
 def compare (array1, array2)
   array1.each {|item|
-    if array2.include?(item)
-      @candidate << item
+    if array2.include?(item) && !@candidates.include?(item)
+      @candidates << item
     end
   }
 end
@@ -26,8 +26,9 @@ compare(french, english)
 compare(french, dutch)
 compare(english, dutch)
 
-print @candidate
+print @candidates
 
+# && !@candidates.include?(item)
 
 
 #try arrays of different lengths
